@@ -12,6 +12,17 @@ const SignupForm = () => {
                     <label className="label">Full Name</label>
                     <input className="input" type="text" />
                 </div>
+                <div className="email">
+                    <label className="label">Email</label>
+                    <input className="input" type="email" />
+                </div>
+                <div className="password">
+                    <label className="label">Password</label>
+                    <input className="input" type="password" />
+                </div>
+                <div>
+                    <button className="submit">Sign Up</button>
+                </div>
             </form>
         </div>
     </div>
