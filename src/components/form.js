@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 import SignupForm from "./SignupForm";
 import SignupFormSuccess from './SignupFormSuccess';
 
-const form = () => {
+const Form = () => {
   const [formIsSubmitted, setFormIsSubmitted] = useState(false);
   const submitForm = () =>{
     setFormIsSubmitted(true);
@@ -18,4 +18,4 @@ const form = () => {
   );
 };
 
-export default form;
+export default Form;
