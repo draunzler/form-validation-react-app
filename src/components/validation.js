@@ -13,7 +13,7 @@ const validation = (values) => {
     }else if(values.password.length < 5){
         errors.password = "Password must be more than 5 characters"
     }
-  return error;
+  return errors;
 };
 
 export default validation;

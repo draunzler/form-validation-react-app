@@ -1,4 +1,5 @@
 import React,{useState} from 'react';
+import validation from './validation';
 
 const SignupForm = () => {
     const[values, setValues] = useState({
@@ -15,6 +16,7 @@ const SignupForm = () => {
     };
     const handleFormSubmit = (event) =>{
         event.preventDefault();
+        setErrors(validation(values));
     };
   return (
     <div className="container">
@@ -31,6 +33,7 @@ const SignupForm = () => {
                     name="fullname" 
                     value={values.fullname}
                     onChange={handleChange}/>
+                    {errors.fullname && <p className="error">{errors.fullname}</p>}
                 </div>
                 <div className="email">
                     <label className="label">Email</label>
@@ -40,6 +43,7 @@ const SignupForm = () => {
                     name="email" 
                     value={values.email}
                     onChange={handleChange}/>
+                    {errors.email && <p className="error">{errors.email}</p>}
                 </div>
                 <div className="password">
                     <label className="label">Password</label>
@@ -49,6 +53,7 @@ const SignupForm = () => {
                     name="password" 
                     value={values.password}
                     onChange={handleChange}/>
+                    {errors.password && <p className="error">{errors.password}</p>}
                 </div>
                 <div>
                     <button className="submit" onClick={handleFormSubmit}>Sign Up</button>
